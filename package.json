@@ -1,0 +1,45 @@
+{
+  "name": "population-panagement-system",
+  "version": "1.0.0",
+  "description": "A Population Management System",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "nodemon --watch src --delay 250ms --exec babel-node ./bin/www",
+    "start": "babel-node ./bin/www ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddouglasz/Population-Management-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddouglasz/Population-Management-System/issues"
+  },
+  "homepage": "https://github.com/ddouglasz/Population-Management-System#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "eslint": "^4.19.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-node": "^6.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-eslint": "^8.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  }
+}
