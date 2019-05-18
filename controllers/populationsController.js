@@ -108,7 +108,9 @@ class populationController {
     // eslint-disable-next-line require-jsdoc
     static updateLocation(req, res) {
         const { locationId } = req.params;
-        const updateObject = req.body;
+        // const updateObject = req.body;
+        const {malePopulation, femalePopulation, location} = req.body;
+        const updateObject = {malePopulation, femalePopulation, location, totalPopulation: Number(malePopulation) + Number(femalePopulation)};
         Population.findByIdAndUpdate({ _id: locationId }, { $set: updateObject })
             .exec()
             .then(() => {
