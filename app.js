@@ -3,6 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser'
 import route from './routes/routes'
 import dotenv from 'dotenv';
+import helmet from 'helmet';
 
 dotenv.config();
 
@@ -11,6 +12,8 @@ const app = express();
 
 // Log requests to the console.
 app.use(logger('dev'));
+app.use(helmet.frameguard({ action: 'deny' }))
+
 
 // Set up mongoose connection
 import mongoose from 'mongoose';

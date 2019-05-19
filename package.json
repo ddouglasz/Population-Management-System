@@ -34,6 +34,7 @@
     "eslint": "^4.19.1",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
+    "helmet": "^3.18.0",
     "mongoose": "^5.5.2",
     "morgan": "^1.9.1"
   },
