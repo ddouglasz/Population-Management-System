@@ -21,4 +21,9 @@ router.get('/location/:locationId', PopulationController.getSingleLocation);
 router.put('/location/:locationId', auth, validatePopulationInput, PopulationController.updateLocation);
 router.delete('/location/:locationId', auth, PopulationController.deleteLocation);
 
+//catch invalid routes
+router.get('/*', (req, res) => res.status(404).send({
+    message: 'Not Found!'
+  }));
+
 export default router;
