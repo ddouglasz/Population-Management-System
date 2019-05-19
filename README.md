@@ -10,7 +10,7 @@ Population Management System (strictly API) is an application that simulates a s
 * User can DELETE a given location
 
 
-###Setup
+##Setup
 
 * Clone the repository
 * Checkout to the `develop` branch
