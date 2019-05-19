@@ -25,6 +25,8 @@ Population Management System (strictly API) is an application that simulates a s
 
 Type of request | route(endpoint)       | Description
 ----------------| ----------| --------------------
+POST     |api/v1/signup|Create a new user
+POST     |api/v1/signin|signnin a new user
 POST     |api/v1/location|Create a new location
 GET      |api/v1/location|Get all locations
 GET      |api/v1/:locationId|Get single location
