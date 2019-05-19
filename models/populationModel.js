@@ -5,6 +5,7 @@ const populationSchema = new Schema({
     malePopulation: { type: Number, required: true },
     femalePopulation: { type: Number, required: true },
     totalPopulation: { type: Number, required: true },
+    userId: { type: String, required: true, trim: true },
     subLocations: []
 },
     {

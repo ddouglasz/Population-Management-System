@@ -19,6 +19,7 @@ class populationController {
             malePopulation,
             totalPopulation: (Number(femalePopulation) + Number(malePopulation)),
             subLocations,
+            userId: req.decoded.id,
         });
 
         return population
@@ -138,9 +139,16 @@ class populationController {
     // eslint-disable-next-line require-jsdoc
     static deleteLocation(req, res) {
         const { locationId } = req.params;
-        Population.findByIdAndRemove({ _id: locationId })
+        Population.findById({ _id: locationId })
             .exec()
-            .then(() => {
+            .then((population) => {
+                if (req.decoded.id !== population.userId) {
+                    console.log(population)
+                    return res.status(403).json({
+                      message: 'You are not authorised to delete this location',
+                    });
+                  }
+                population.remove()
                 res.status(200).json({
                     success: true,
                     message: 'Location deleted successfully',
