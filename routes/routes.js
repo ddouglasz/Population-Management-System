@@ -12,9 +12,9 @@ import UserController from '../controllers/userController'
 const  router = express.Router();
 
 
-
+//population Routes
 router.post('/signup',  UserController.signUp);
-// router.post('/login',  UserController.login);
+// router.post('/login',  UserController.signIn);
 router.post('/location', auth, validatePopulationInput, validateLocationInput, PopulationController.createLocation);
 router.get('/location', PopulationController.getAllLocations);
 router.get('/location/:locationId', PopulationController.getSingleLocation);
