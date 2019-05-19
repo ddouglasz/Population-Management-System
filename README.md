@@ -1,5 +1,5 @@
 # Population-Management-System
-Population Management System (strictly API) is an application that simulates a system that keeps track of basic population details for different locations.\
+Population Management System (strictly API) is an application that simulates a system that keeps track of basic population details for different locations.
 
 
 ## Features
