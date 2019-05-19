@@ -4,6 +4,8 @@ import express from 'express';
 import auth from '../midddlawares/auth';
 import validatePopulationInput from '../midddlawares/populationsValidation';
 import validateLocationInput from '../midddlawares/locationValidator';
+import validateUserSignUp from '../midddlawares/signupValidator';
+import validateUserSignIn from '../midddlawares/signinValidator';
 
 // controllers
 import PopulationController from '../controllers/populationsController';
@@ -13,8 +15,8 @@ const  router = express.Router();
 
 
 //population Routes
-router.post('/signup',  UserController.signUp);
-router.post('/signin',  UserController.signIn);
+router.post('/signup', validateUserSignUp, UserController.signUp);
+router.post('/signin', validateUserSignIn, UserController.signIn);
 router.post('/location', auth, validatePopulationInput, validateLocationInput, PopulationController.createLocation);
 router.get('/location', PopulationController.getAllLocations);
 router.get('/location/:locationId', PopulationController.getSingleLocation);
