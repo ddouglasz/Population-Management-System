@@ -28,7 +28,7 @@ class populationController {
         return res.status(201).json({
           success: true,
           message: 'New location registered successfully',
-          Cencus: newPopulation
+          location: newPopulation
         });
       })
       .catch((error) => {
@@ -55,7 +55,7 @@ class populationController {
         return res.status(200).json({
           success: true,
           message: 'all locations',
-          Census: allLocations
+          location: allLocations
         });
       })
       .catch((error) => {
@@ -83,15 +83,15 @@ class populationController {
         if (locationtDetail) {
           return res.status(200).json({
             success: true,
-            Location: locationtDetail
+            location: locationtDetail
           });
         }
         return res.status(404).json({
-          message: 'This location does not exist'
+          message: 'Location Not Found'
         })
       })
       .catch((error) => {
-        res.status(500).json({
+        res.status(404).json({
           success: false,
           message: 'This location does not exist',
           error: error.message,
