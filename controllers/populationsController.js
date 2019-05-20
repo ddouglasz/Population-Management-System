@@ -25,9 +25,9 @@ class populationController {
     return population
       .save()
       .then((newPopulation) => {
-        return res.status(200).json({
+        return res.status(201).json({
           success: true,
-          message: 'New census created successfully',
+          message: 'New location registered successfully',
           Cencus: newPopulation
         });
       })

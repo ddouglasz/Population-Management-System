@@ -47,28 +47,8 @@ const validateUserSignUp = (req, res, next) => {
       message: 'lastName is required',
     });
   }
-  if (!req.body.firstName.match('[a-zA-Z]+$')) {
-    return res.status(401).json({
-      message: 'Only alphabets allowed in first name',
-    });
-  }
-  if (!req.body.lastName.match('[a-zA-Z]+$')) {
-    return res.status(401).json({
-      message: 'Only alphabets allowed in last name',
-    });
-  }
-  if ((req.body.lastName).length > 20) {
-    return res.status(400).json({
-      message: 'please enter a lastName that is less than 20 characters'
-    });
-  }
-  if ((req.body.firstName).length > 20) {
-    return res.status(400).json({
-      message: 'please enter a firstName that is less than 20 characters'
-    });
-  }
   if (!isEmail(req.body.email.trim())) {
-    return res.status(401).json({
+    return res.status(409).json({
       message: 'invalid email format',
     });
   }
